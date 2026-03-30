@@ -8,99 +8,49 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f7; color: #1a1a2e; }
 
-  .app-header {
-    background: #1B3A6B;
-    padding: 14px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  }
+  .app-header { background: #1B3A6B; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
   .app-header .logo { color: white; font-size: 20px; font-weight: 700; letter-spacing: 1px; }
   .app-header .logo span { color: #6eb3f7; }
   .app-header .tag { background: #2E5FA3; color: #a8d4ff; font-size: 11px; padding: 3px 10px; border-radius: 20px; }
 
   .container { max-width: 1100px; margin: 32px auto; padding: 0 20px; }
 
-  /* BANNER */
-  .patrimonio-banner {
-    background: linear-gradient(135deg, #1B3A6B 0%, #2E5FA3 100%);
-    border-radius: 16px;
-    padding: 28px 36px;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 20px rgba(27,58,107,0.25);
-  }
+  .patrimonio-banner { background: linear-gradient(135deg, #1B3A6B 0%, #2E5FA3 100%); border-radius: 16px; padding: 28px 36px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 20px rgba(27,58,107,0.25); flex-wrap: wrap; gap: 20px; }
   .banner-left { display: flex; align-items: center; gap: 20px; }
-  .banner-avatar {
-    width: 64px; height: 64px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 24px; font-weight: 800;
-    border: 2px solid rgba(255,255,255,0.4);
-    flex-shrink: 0;
-  }
+  .banner-avatar { width: 64px; height: 64px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: 800; border: 2px solid rgba(255,255,255,0.4); flex-shrink: 0; }
   .banner-info .nome { color: white; font-size: 22px; font-weight: 800; }
-  .banner-info .sub { color: #a8d4ff; font-size: 13px; margin-top: 4px; }
-  .banner-stats { display: flex; gap: 40px; }
+  .banner-info .cargo { color: #6eb3f7; font-size: 14px; font-weight: 600; margin-top: 3px; }
+  .banner-info .sub { color: #a8d4ff; font-size: 12px; margin-top: 3px; }
+  .banner-stats { display: flex; gap: 36px; }
   .stat { text-align: center; }
   .stat-value { color: white; font-size: 22px; font-weight: 800; }
   .stat-label { color: #a8d4ff; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .badge-icp {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white; padding: 6px 16px;
-    border-radius: 20px; font-size: 13px;
-  }
+  .badge-icp { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; }
 
-  /* GRID PRINCIPAL */
-  .main-grid { display: grid; grid-template-columns: 360px 1fr; gap: 24px; margin-bottom: 24px; }
+  .tabs { display: flex; gap: 4px; margin-bottom: 20px; background: white; border-radius: 12px; padding: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .tab { flex: 1; padding: 10px; text-align: center; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; color: #888; transition: all 0.2s; border: none; background: none; }
+  .tab.active { background: #1B3A6B; color: white; }
+  .tab:hover:not(.active) { background: #f0f2f7; color: #1B3A6B; }
 
-  .card {
-    background: white; border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    overflow: hidden;
-  }
-  .card-header {
-    background: #f8f9fc;
-    padding: 16px 20px;
-    border-bottom: 1px solid #e8edf5;
-    font-size: 12px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 1px; color: #1B3A6B;
-    display: flex; align-items: center; gap: 8px;
-  }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .main-grid { display: grid; grid-template-columns: 360px 1fr; gap: 20px; }
+
+  .card { background: white; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); overflow: hidden; margin-bottom: 20px; }
+  .card-header { background: #f8f9fc; padding: 14px 20px; border-bottom: 1px solid #e8edf5; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #1B3A6B; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
   .card-body { padding: 20px; }
 
-  .info-row {
-    display: flex; align-items: flex-start;
-    gap: 10px; padding: 9px 0;
-    border-bottom: 1px solid #f0f2f7; font-size: 13px;
-  }
+  .info-row { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f2f7; font-size: 13px; }
   .info-row:last-child { border-bottom: none; }
-  .info-icon {
-    width: 30px; height: 30px; border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px; flex-shrink: 0;
-  }
-  .info-icon.blue { background: #e8edf5; }
-  .info-icon.green { background: #e8f5ed; }
-  .info-icon.orange { background: #fff3e0; }
-  .info-icon.purple { background: #f0e8f5; }
+  .info-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .info-icon.blue { background: #e8edf5; } .info-icon.green { background: #e8f5ed; } .info-icon.orange { background: #fff3e0; } .info-icon.purple { background: #f0e8f5; }
   .info-col { flex: 1; }
   .info-label { color: #999; font-size: 11px; margin-bottom: 2px; }
   .info-value { color: #1a1a2e; font-weight: 600; }
-  .info-value.green { color: #25d366; }
-  .info-value.blue { color: #2E5FA3; }
-  .info-value.muted { color: #666; font-weight: 400; font-size: 12px; }
+  .info-value.green { color: #25d366; } .info-value.blue { color: #2E5FA3; } .info-value.muted { color: #666; font-weight: 400; font-size: 12px; }
 
-  .badge {
-    display: inline-flex; align-items: center; gap: 4px;
-    padding: 3px 10px; border-radius: 20px;
-    font-size: 11px; font-weight: 600;
-  }
+  .badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
   .badge.ativo { background: #e8f5ed; color: #1a6b3a; }
   .badge.baixada { background: #f5f5f5; color: #888; }
   .badge.regular { background: #e8f5ed; color: #1a6b3a; }
@@ -108,52 +58,43 @@
   .badge.plus { background: #fff3e0; color: #e67e22; }
   .badge.alta { background: #e8f5ed; color: #1a6b3a; }
   .badge.media { background: #fff3e0; color: #e67e22; }
+  .badge.somma { background: #1B3A6B; color: white; }
 
-  .section-title {
-    font-size: 11px; text-transform: uppercase;
-    letter-spacing: 1px; color: #888; font-weight: 700;
-    margin: 16px 0 10px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .section-title::after { content: ''; flex: 1; height: 1px; background: #f0f2f7; }
+  .linkedin-card { background: linear-gradient(135deg, #0077b5, #0a66c2); border-radius: 14px; padding: 20px; margin-bottom: 16px; }
+  .linkedin-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .linkedin-avatar { width: 56px; height: 56px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; font-weight: 800; border: 2px solid rgba(255,255,255,0.4); }
+  .linkedin-info .ln-nome { color: white; font-size: 16px; font-weight: 700; }
+  .linkedin-info .ln-cargo { color: #a8d4ff; font-size: 13px; margin-top: 2px; }
+  .linkedin-info .ln-local { color: #c8e4ff; font-size: 12px; margin-top: 2px; }
+  .linkedin-stats { display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.2); }
+  .ln-stat { text-align: center; }
+  .ln-stat-value { color: white; font-size: 16px; font-weight: 800; }
+  .ln-stat-label { color: #a8d4ff; font-size: 11px; }
+  .linkedin-url { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; text-decoration: none; margin-top: 14px; cursor: pointer; transition: all 0.2s; }
+  .linkedin-url:hover { background: rgba(255,255,255,0.25); }
 
-  /* TELEFONES */
-  .tel-item {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 10px 12px; border-radius: 10px;
-    background: #f8f9fc; margin-bottom: 6px;
-  }
+  .tel-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 10px; background: #f8f9fc; margin-bottom: 6px; }
   .tel-left { display: flex; align-items: center; gap: 10px; }
   .tel-numero { font-size: 14px; font-weight: 700; color: #1a1a2e; }
   .tel-ultimo { font-size: 11px; color: #999; margin-top: 1px; }
   .tel-right { display: flex; gap: 6px; align-items: center; }
-  .whatsapp-badge {
-    background: #25d366; color: white;
-    padding: 3px 10px; border-radius: 20px;
-    font-size: 11px; font-weight: 700;
-  }
+  .whatsapp-btn { background: #25d366; color: white; border: none; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: all 0.2s; }
+  .whatsapp-btn:hover { background: #1da851; transform: scale(1.05); }
 
-  /* E-MAILS */
-  .email-item {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 8px 12px; border-radius: 10px;
-    background: #f8f9fc; margin-bottom: 6px;
-  }
+  .email-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-radius: 10px; background: #f8f9fc; margin-bottom: 6px; }
   .email-left { display: flex; align-items: center; gap: 8px; }
   .email-addr { font-size: 13px; color: #2E5FA3; font-weight: 500; }
-  .email-highlight { background: #e8edf5; }
-  .email-somma { background: #e8f0ff; border: 1px solid #c0d4ff; }
+  .email-somma { background: #e8edf5; border: 1px solid #c0d4ff; }
   .email-somma .email-addr { color: #1B3A6B; font-weight: 700; }
+  .copy-btn { background: #e8edf5; border: none; color: #1B3A6B; padding: 4px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .copy-btn:hover { background: #1B3A6B; color: white; }
 
-  /* EMPRESAS */
-  .empresa-item {
-    background: #f8f9fc; border-radius: 10px;
-    padding: 12px 14px; margin-bottom: 8px;
-    border-left: 3px solid #2E5FA3;
-    transition: all 0.2s; cursor: pointer;
-  }
+  .section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; margin: 16px 0 10px; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: #f0f2f7; }
+
+  .empresa-item { background: #f8f9fc; border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; border-left: 3px solid #2E5FA3; transition: all 0.2s; cursor: pointer; }
   .empresa-item:hover { background: #e8edf5; transform: translateX(2px); }
-  .empresa-item.baixada { border-left-color: #bbb; opacity: 0.7; }
+  .empresa-item.baixada { border-left-color: #bbb; opacity: 0.65; }
   .empresa-item.destaque { border-left-color: #1B3A6B; background: #edf1fa; }
   .empresa-row1 { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
   .empresa-nome { font-size: 13px; font-weight: 700; color: #1B3A6B; }
@@ -162,66 +103,57 @@
   .empresa-cnpj { font-size: 11px; color: #888; font-family: monospace; }
   .empresa-participacao { font-size: 11px; font-weight: 700; color: #2E5FA3; }
   .empresa-data { font-size: 11px; color: #999; }
+  .ver-empresa-btn { background: #e8edf5; border: none; color: #1B3A6B; padding: 3px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer; margin-left: auto; transition: all 0.2s; }
+  .ver-empresa-btn:hover { background: #1B3A6B; color: white; }
 
-  /* PATRIMÔNIO TOTAL */
-  .patrimonio-total {
-    background: linear-gradient(135deg, #1a6b3a, #27ae60);
-    border-radius: 10px; padding: 14px 18px;
-    display: flex; align-items: center; justify-content: space-between;
-    margin-top: 12px;
-  }
+  .patrimonio-total { background: linear-gradient(135deg, #1a6b3a, #27ae60); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
   .patrimonio-total .label { color: #a8f0c0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
   .patrimonio-total .value { color: white; font-size: 20px; font-weight: 800; }
 
-  /* ENDEREÇOS */
-  .endereco-item {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 10px 0; border-bottom: 1px solid #f0f2f7;
-  }
+  .endereco-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f2f7; }
   .endereco-item:last-child { border-bottom: none; }
 
-  /* AÇÕES */
+  /* RESUMO PÚBLICO */
+  .noticia-item { background: #f8f9fc; border-radius: 10px; padding: 14px; margin-bottom: 10px; border-left: 3px solid #2E5FA3; transition: all 0.2s; }
+  .noticia-item:hover { background: #e8edf5; }
+  .noticia-fonte { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .noticia-fonte-nome { font-size: 11px; color: #2E5FA3; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .noticia-data { font-size: 11px; color: #999; }
+  .noticia-titulo { font-size: 13px; font-weight: 700; color: #1B3A6B; margin-bottom: 4px; }
+  .noticia-resumo { font-size: 12px; color: #666; line-height: 1.5; }
+  .noticia-tag { display: inline-block; background: #e8edf5; color: #1B3A6B; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; margin-top: 6px; }
+
+  .publicacao-item { background: #f0f5ff; border-radius: 10px; padding: 14px; margin-bottom: 10px; border-left: 3px solid #0077b5; }
+  .pub-plataforma { font-size: 11px; color: #0077b5; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .pub-texto { font-size: 13px; color: #333; line-height: 1.6; }
+  .pub-engajamento { display: flex; gap: 16px; margin-top: 8px; font-size: 11px; color: #888; }
+
   .acoes { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-  .btn {
-    padding: 9px 18px; border-radius: 8px;
-    font-size: 13px; font-weight: 600;
-    cursor: pointer; border: none;
-    display: flex; align-items: center; gap: 6px;
-    transition: all 0.2s;
-  }
+  .btn { padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; display: flex; align-items: center; gap: 6px; transition: all 0.2s; }
   .btn-primary { background: #1B3A6B; color: white; }
   .btn-primary:hover { background: #2E5FA3; }
   .btn-secondary { background: #e8edf5; color: #1B3A6B; }
   .btn-secondary:hover { background: #d0daf0; }
   .btn-whatsapp { background: #25d366; color: white; }
   .btn-whatsapp:hover { background: #1da851; }
+  .btn-linkedin { background: #0077b5; color: white; }
+  .btn-linkedin:hover { background: #005f8e; }
+  .btn-danger { background: #ffeaea; color: #c0392b; }
 
-  /* ANÁLISE */
-  .analise-card {
-    background: linear-gradient(135deg, #1B3A6B, #2E5FA3);
-    border-radius: 16px; padding: 24px 32px;
-    display: flex; align-items: center;
-    justify-content: space-between; margin-bottom: 40px;
-    box-shadow: 0 4px 20px rgba(27,58,107,0.25);
-  }
+  .analise-card { background: linear-gradient(135deg, #1B3A6B, #2E5FA3); border-radius: 16px; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(27,58,107,0.25); gap: 20px; flex-wrap: wrap; }
   .analise-label { color: #a8d4ff; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
   .analise-texto { color: white; font-size: 14px; line-height: 1.6; max-width: 620px; }
-  .analise-acoes { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; margin-left: 24px; }
+  .analise-acoes { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
 
-  .pipeline-btn {
-    position: fixed; bottom: 32px; right: 32px;
-    background: #1B3A6B; color: white; border: none;
-    border-radius: 50px; padding: 14px 24px;
-    font-size: 14px; font-weight: 700; cursor: pointer;
-    box-shadow: 0 4px 20px rgba(27,58,107,0.4);
-    display: flex; align-items: center; gap: 8px; z-index: 100;
-  }
+  .pipeline-btn { position: fixed; bottom: 32px; right: 32px; background: #1B3A6B; color: white; border: none; border-radius: 50px; padding: 14px 24px; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 20px rgba(27,58,107,0.4); display: flex; align-items: center; gap: 8px; z-index: 100; transition: all 0.2s; }
+  .pipeline-btn:hover { background: #2E5FA3; transform: translateY(-2px); }
+
+  .alerta-interno { background: #fff3cd; border: 1px solid #ffc107; border-radius: 10px; padding: 12px 16px; margin-bottom: 20px; display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #856404; }
 
   @media (max-width: 900px) {
     .main-grid { grid-template-columns: 1fr; }
-    .patrimonio-banner { flex-direction: column; gap: 16px; }
-    .analise-card { flex-direction: column; gap: 16px; }
-    .analise-acoes { margin-left: 0; flex-direction: row; }
+    .patrimonio-banner { flex-direction: column; }
+    .analise-card { flex-direction: column; }
   }
 </style>
 </head>
@@ -234,434 +166,268 @@
 
 <div class="container">
 
+  <!-- ALERTA -->
+  <div class="alerta-interno">
+    ⚠️ <div><strong>Atenção:</strong> Wilson da Silva Souza é <strong>CEO e CIO da Somma Investimentos S.A.</strong> — sócio-fundador do grupo. Este card foi gerado como demonstração da ferramenta. Não iniciar abordagem comercial.</div>
+  </div>
+
   <!-- BANNER -->
   <div class="patrimonio-banner">
     <div class="banner-left">
       <div class="banner-avatar">WS</div>
       <div class="banner-info">
         <div class="nome">Wilson da Silva Souza</div>
-        <div class="sub">CPF: 692.025.***-**  ·  Florianópolis, SC  ·  Atualizado em 24/03/2026</div>
+        <div class="cargo">CEO & CIO — Somma Investimentos S.A.</div>
+        <div class="sub">CPF: 692.025.***-**  ·  Florianópolis, SC  ·  Atualizado 24/03/2026</div>
       </div>
     </div>
     <div class="banner-stats">
-      <div class="stat">
-        <div class="stat-value">R$ 1,05 Mi</div>
-        <div class="stat-label">Capital Societário</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">10</div>
-        <div class="stat-label">Empresas</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">4</div>
-        <div class="stat-label">Celulares</div>
-      </div>
+      <div class="stat"><div class="stat-value">R$ 4,4 Mi</div><div class="stat-label">Capital Societário</div></div>
+      <div class="stat"><div class="stat-value">12</div><div class="stat-label">Empresas</div></div>
+      <div class="stat"><div class="stat-value">500+</div><div class="stat-label">Conexões LinkedIn</div></div>
     </div>
-    <div class="badge-icp">⭐ ICP1 — Patrimonial</div>
+    <div class="badge-icp">⭐ Perfil Ultra High</div>
   </div>
 
-  <!-- GRID PRINCIPAL -->
-  <div class="main-grid">
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('dados')">👤 Dados Pessoais</button>
+    <button class="tab" onclick="showTab('contatos')">📱 Contatos</button>
+    <button class="tab" onclick="showTab('empresas')">🏢 Empresas</button>
+    <button class="tab" onclick="showTab('linkedin')">🔗 LinkedIn</button>
+    <button class="tab" onclick="showTab('publico')">📰 Resumo Público</button>
+  </div>
 
-    <!-- COLUNA ESQUERDA — DADOS PESSOAIS + CONTATOS -->
-    <div>
-
-      <!-- DADOS PESSOAIS -->
-      <div class="card" style="margin-bottom:20px;">
-        <div class="card-header">👤 Dados Pessoais</div>
-        <div class="card-body">
-          <div class="info-row">
-            <div class="info-icon blue">🎂</div>
-            <div class="info-col">
-              <div class="info-label">Data de Nascimento</div>
-              <div class="info-value">09/11/1970 · <strong>55 anos</strong></div>
-            </div>
+  <!-- TAB: DADOS PESSOAIS -->
+  <div id="tab-dados" class="tab-content active">
+    <div class="main-grid">
+      <div>
+        <div class="card">
+          <div class="card-header">👤 Dados Pessoais</div>
+          <div class="card-body">
+            <div class="info-row"><div class="info-icon blue">🎂</div><div class="info-col"><div class="info-label">Data de Nascimento</div><div class="info-value">09/11/1970 · <strong>55 anos</strong></div></div></div>
+            <div class="info-row"><div class="info-icon blue">👤</div><div class="info-col"><div class="info-label">Sexo</div><div class="info-value">Masculino</div></div></div>
+            <div class="info-row"><div class="info-icon blue">💼</div><div class="info-col"><div class="info-label">Ocupação</div><div class="info-value">Administrador · CEO & CIO</div></div></div>
+            <div class="info-row"><div class="info-icon green">✅</div><div class="info-col"><div class="info-label">Situação CPF</div><div class="info-value"><span class="badge regular">● Regular</span></div></div></div>
+            <div class="info-row"><div class="info-icon blue">👩</div><div class="info-col"><div class="info-label">Nome da Mãe</div><div class="info-value">Severina da Silva</div></div></div>
+            <div class="info-row"><div class="info-icon green">💓</div><div class="info-col"><div class="info-label">Falecido</div><div class="info-value">Não</div></div></div>
           </div>
-          <div class="info-row">
-            <div class="info-icon blue">👤</div>
-            <div class="info-col">
-              <div class="info-label">Sexo</div>
-              <div class="info-value">Masculino</div>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="info-icon blue">💼</div>
-            <div class="info-col">
-              <div class="info-label">Ocupação</div>
-              <div class="info-value">Administrador</div>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="info-icon green">✅</div>
-            <div class="info-col">
-              <div class="info-label">Situação CPF</div>
-              <div class="info-value"><span class="badge regular">● Regular</span></div>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="info-icon blue">👩</div>
-            <div class="info-col">
-              <div class="info-label">Nome da Mãe</div>
-              <div class="info-value">Severina da Silva</div>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="info-icon green">💓</div>
-            <div class="info-col">
-              <div class="info-label">Falecido</div>
-              <div class="info-value">Não</div>
-            </div>
+        </div>
+        <div class="card">
+          <div class="card-header">📍 Endereços</div>
+          <div class="card-body">
+            <div class="endereco-item"><div class="info-icon blue">🏠</div><div class="info-col"><div class="info-label">Residencial · Florianópolis, SC</div><div class="info-value">Bvd Paulo Zimmer, 55 — Ap 303</div><div class="info-value muted">Agronômica · CEP 88025-340</div></div></div>
+            <div class="endereco-item"><div class="info-icon blue">🏠</div><div class="info-col"><div class="info-label">Residencial · Florianópolis, SC</div><div class="info-value">R. Souza Dutra, 353 — Ap 203 1</div><div class="info-value muted">Estreito · CEP 88070-605</div></div></div>
           </div>
         </div>
       </div>
-
-      <!-- ENDEREÇOS -->
-      <div class="card" style="margin-bottom:20px;">
-        <div class="card-header">📍 Endereços</div>
-        <div class="card-body">
-          <div class="endereco-item">
-            <div class="info-icon blue">🏠</div>
-            <div class="info-col">
-              <div class="info-label">Residencial · Florianópolis, SC</div>
-              <div class="info-value">Bvd Paulo Zimmer, 55 — Ap 303</div>
-              <div class="info-value muted">Agronômica · CEP 88025-340</div>
-            </div>
-          </div>
-          <div class="endereco-item">
-            <div class="info-icon blue">🏠</div>
-            <div class="info-col">
-              <div class="info-label">Residencial · Florianópolis, SC</div>
-              <div class="info-value">R. Souza Dutra, 353 — Ap 203 1</div>
-              <div class="info-value muted">Estreito · CEP 88070-605</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BOTÕES DE AÇÃO -->
-      <div class="acoes">
-        <button class="btn btn-whatsapp">💬 (48) 98825-4252</button>
-        <button class="btn btn-primary">➕ Adicionar ao Pipeline</button>
-        <button class="btn btn-secondary">📄 Exportar PDF</button>
-      </div>
-
-    </div>
-
-    <!-- COLUNA DIREITA — TELEFONES + E-MAILS -->
-    <div>
-
-      <!-- TELEFONES CELULARES -->
-      <div class="card" style="margin-bottom:20px;">
-        <div class="card-header">📱 Telefones Celulares</div>
-        <div class="card-body">
-
-          <div class="tel-item">
-            <div class="tel-left">
-              <div class="info-icon green">📱</div>
-              <div>
-                <div class="tel-numero">(48) 98825-4252</div>
-                <div class="tel-ultimo">Último contato há 3 meses</div>
-              </div>
-            </div>
-            <div class="tel-right">
-              <span class="whatsapp-badge">✅ WhatsApp</span>
-              <span class="badge plus">PLUS</span>
-              <span class="badge alta">Alta</span>
-            </div>
-          </div>
-
-          <div class="tel-item">
-            <div class="tel-left">
-              <div class="info-icon green">📱</div>
-              <div>
-                <div class="tel-numero">(48) 98821-3247</div>
-                <div class="tel-ultimo">Último contato há 3 meses</div>
-              </div>
-            </div>
-            <div class="tel-right">
-              <span class="whatsapp-badge">✅ WhatsApp</span>
-              <span class="badge plus">PLUS</span>
-              <span class="badge alta">Alta</span>
-            </div>
-          </div>
-
-          <div class="tel-item">
-            <div class="tel-left">
-              <div class="info-icon green">📱</div>
-              <div>
-                <div class="tel-numero">(48) 99114-4252</div>
-                <div class="tel-ultimo">Último contato há 3 meses</div>
-              </div>
-            </div>
-            <div class="tel-right">
-              <span class="badge plus">PLUS</span>
-              <span class="badge alta">Alta</span>
-            </div>
-          </div>
-
-          <div class="tel-item">
-            <div class="tel-left">
-              <div class="info-icon green">📱</div>
-              <div>
-                <div class="tel-numero">(48) 99176-0347</div>
-                <div class="tel-ultimo">Último contato há 6 meses</div>
-              </div>
-            </div>
-            <div class="tel-right">
-              <span class="whatsapp-badge">✅ WhatsApp</span>
-              <span class="badge plus">PLUS</span>
-              <span class="badge alta">Alta</span>
-            </div>
-          </div>
-
-          <div class="section-title">Telefones Fixos</div>
-
-          <div class="tel-item">
-            <div class="tel-left">
-              <div class="info-icon blue">☎️</div>
-              <div>
-                <div class="tel-numero">(48) 3348-6775</div>
-                <div class="tel-ultimo">Último contato há 1 ano</div>
-              </div>
-            </div>
-            <div class="tel-right">
-              <span class="badge plus">PLUS</span>
-              <span class="badge media">Média</span>
-            </div>
-          </div>
-
-          <div class="tel-item">
-            <div class="tel-left">
-              <div class="info-icon blue">☎️</div>
-              <div>
-                <div class="tel-numero">(48) 3231-1232</div>
-                <div class="tel-ultimo">Normal</div>
-              </div>
-            </div>
-            <div class="tel-right"></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- E-MAILS -->
       <div class="card">
-        <div class="card-header">✉️ E-mails</div>
+        <div class="card-header">🏢 Vínculo Principal Identificado</div>
         <div class="card-body">
+          <div class="empresa-item destaque">
+            <div class="empresa-row1"><div class="empresa-nome">Somma Investimentos S.A.</div><div class="empresa-capital">Presidente</div></div>
+            <div class="empresa-row2"><div class="empresa-cnpj">05.563.299/0001-06</div><div class="badge ativo">● Ativa</div><div class="badge somma">Somma Group</div></div>
+          </div>
+          <div class="empresa-item destaque">
+            <div class="empresa-row1"><div class="empresa-nome">Somma Multi-Family Office S.A.</div><div class="empresa-capital">Sócio-Adm.</div></div>
+            <div class="empresa-row2"><div class="empresa-cnpj">29.247.309/0001-62</div><div class="badge ativo">● Ativa · desde 20/07/2022</div></div>
+          </div>
+          <div class="empresa-item destaque">
+            <div class="empresa-row1"><div class="empresa-nome">Somma Tecnologia LTDA</div><div class="empresa-capital">R$ 4.210.000</div></div>
+            <div class="empresa-row2"><div class="empresa-cnpj">Desenvolvimento de Software</div><div class="badge ativo">● Ativa · desde 21/03/2023</div></div>
+          </div>
+          <div style="margin-top:16px; padding:14px; background:#f8f9fc; border-radius:10px; font-size:13px; color:#555; line-height:1.6;">
+            <strong style="color:#1B3A6B;">Perfil:</strong> Fundador e principal executivo do Grupo Somma. Iniciou a Somma Investimentos em 2003 em Florianópolis. Hoje o grupo conta com mais de 70 colaboradores e está presente em todo o território nacional. Wilson lidera a gestão de investimentos e estratégia do grupo, com atuação em fundos de pensão, crédito privado e gestão imobiliária.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="email-item email-somma">
-            <div class="email-left">
-              <div class="info-icon blue">⭐</div>
-              <div>
-                <div class="email-addr">luiza@sommainvestimentos.com.br</div>
-                <div style="font-size:11px; color:#1B3A6B; margin-top:2px; font-weight:600;">Vinculado ao grupo Somma</div>
+  <!-- TAB: CONTATOS -->
+  <div id="tab-contatos" class="tab-content">
+    <div class="main-grid">
+      <div>
+        <div class="card">
+          <div class="card-header">📱 Telefones Celulares <span style="font-size:11px; color:#888; text-transform:none; font-weight:400;">4 números · 3 com WhatsApp</span></div>
+          <div class="card-body">
+            <div class="tel-item"><div class="tel-left"><div class="info-icon green">📱</div><div><div class="tel-numero">(48) 98825-4252</div><div class="tel-ultimo">Último contato há 3 meses</div></div></div><div class="tel-right"><button class="whatsapp-btn" onclick="window.open('https://wa.me/5548988254252')">💬 WhatsApp</button><span class="badge plus">PLUS</span><span class="badge alta">Alta</span></div></div>
+            <div class="tel-item"><div class="tel-left"><div class="info-icon green">📱</div><div><div class="tel-numero">(48) 98821-3247</div><div class="tel-ultimo">Último contato há 3 meses</div></div></div><div class="tel-right"><button class="whatsapp-btn" onclick="window.open('https://wa.me/5548988213247')">💬 WhatsApp</button><span class="badge plus">PLUS</span><span class="badge alta">Alta</span></div></div>
+            <div class="tel-item"><div class="tel-left"><div class="info-icon green">📱</div><div><div class="tel-numero">(48) 99114-4252</div><div class="tel-ultimo">Último contato há 3 meses</div></div></div><div class="tel-right"><span class="badge plus">PLUS</span><span class="badge alta">Alta</span></div></div>
+            <div class="tel-item"><div class="tel-left"><div class="info-icon green">📱</div><div><div class="tel-numero">(48) 99176-0347</div><div class="tel-ultimo">Último contato há 6 meses</div></div></div><div class="tel-right"><button class="whatsapp-btn" onclick="window.open('https://wa.me/5548991760347')">💬 WhatsApp</button><span class="badge plus">PLUS</span><span class="badge alta">Alta</span></div></div>
+            <div class="section-title">Telefones Fixos</div>
+            <div class="tel-item"><div class="tel-left"><div class="info-icon blue">☎️</div><div><div class="tel-numero">(48) 3348-6775</div><div class="tel-ultimo">Último contato há 1 ano</div></div></div><div class="tel-right"><span class="badge plus">PLUS</span><span class="badge media">Média</span></div></div>
+            <div class="tel-item"><div class="tel-left"><div class="info-icon blue">☎️</div><div><div class="tel-numero">(48) 3231-1232</div><div class="tel-ultimo">Normal</div></div></div><div class="tel-right"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="card-header">✉️ E-mails <span style="font-size:11px; color:#888; text-transform:none; font-weight:400;">5 endereços identificados</span></div>
+          <div class="card-body">
+            <div class="email-item email-somma"><div class="email-left"><div class="info-icon blue">⭐</div><div><div class="email-addr">luiza@sommainvestimentos.com.br</div><div style="font-size:11px; color:#1B3A6B; margin-top:2px; font-weight:600;">Vinculado ao grupo Somma</div></div></div><button class="copy-btn" onclick="copyText('luiza@sommainvestimentos.com.br')">📋 Copiar</button></div>
+            <div class="email-item"><div class="email-left"><div class="info-icon blue">✉️</div><div class="email-addr">alessandra.constantino@uol.com.br</div></div><button class="copy-btn" onclick="copyText('alessandra.constantino@uol.com.br')">📋 Copiar</button></div>
+            <div class="email-item"><div class="email-left"><div class="info-icon blue">✉️</div><div class="email-addr">veragrillo@uol.com.br</div></div><button class="copy-btn" onclick="copyText('veragrillo@uol.com.br')">📋 Copiar</button></div>
+            <div class="email-item"><div class="email-left"><div class="info-icon blue">✉️</div><div class="email-addr">alessandra.constantino@yahoo.com.br</div></div><button class="copy-btn" onclick="copyText('alessandra.constantino@yahoo.com.br')">📋 Copiar</button></div>
+            <div class="email-item"><div class="email-left"><div class="info-icon blue">✉️</div><div class="email-addr">saravmarinho@gmail.com</div></div><button class="copy-btn" onclick="copyText('saravmarinho@gmail.com')">📋 Copiar</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: EMPRESAS -->
+  <div id="tab-empresas" class="tab-content">
+    <div class="card">
+      <div class="card-header">🏢 Participações Societárias <span style="font-size:11px; color:#888; text-transform:none; font-weight:400;">12 empresas identificadas · 10 ativas</span></div>
+      <div class="card-body">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div class="empresa-item destaque"><div class="empresa-row1"><div class="empresa-nome">Somma Investimentos S.A.</div><div><span class="badge somma">Presidente</span></div></div><div class="empresa-row2"><div class="empresa-cnpj">05.563.299/0001-06</div><div class="empresa-data">Fundação: 20/03/2003</div><div class="badge ativo">● Ativa</div><button class="ver-empresa-btn">Ver empresa</button></div></div>
+          <div class="empresa-item destaque"><div class="empresa-row1"><div class="empresa-nome">Somma Multi-Family Office S.A.</div><div class="empresa-capital">R$ 205.000</div></div><div class="empresa-row2"><div class="empresa-cnpj">29.247.309/0001-62</div><div class="empresa-participacao">Sócio-Adm. desde 20/07/2022</div><div class="badge ativo">● Ativa</div><button class="ver-empresa-btn">Ver empresa</button></div></div>
+          <div class="empresa-item destaque"><div class="empresa-row1"><div class="empresa-nome">Somma Tecnologia LTDA</div><div class="empresa-capital">R$ 4.210.000</div></div><div class="empresa-row2"><div class="empresa-cnpj">Desenv. de Software</div><div class="empresa-data">desde 21/03/2023</div><div class="badge ativo">● Ativa</div><button class="ver-empresa-btn">Ver empresa</button></div></div>
+          <div class="empresa-item destaque"><div class="empresa-row1"><div class="empresa-nome">Somma Partners LTDA</div><div class="empresa-capital">R$ 10.000</div></div><div class="empresa-row2"><div class="empresa-cnpj">41.498.950/0001-75 · Holdings</div><div class="empresa-participacao">0% · Sócio-Adm.</div><div class="badge ativo">● Ativa</div></div></div>
+          <div class="empresa-item"><div class="empresa-row1"><div class="empresa-nome">GSI 10 - Part. e Empreend. Imob. SPE</div><div class="empresa-capital">R$ 570.000</div></div><div class="empresa-row2"><div class="empresa-cnpj">41.459.435/0001-86</div><div class="empresa-participacao">33,3%</div><div class="empresa-data">05/04/2021</div><div class="badge ativo">● Ativa</div></div></div>
+          <div class="empresa-item"><div class="empresa-row1"><div class="empresa-nome">GSI 07 - Part. e Empreend. Imob. SPE</div><div class="empresa-capital">—</div></div><div class="empresa-row2"><div class="empresa-cnpj">Sócio desde 04/12/2023</div><div class="badge ativo">● Ativa</div></div></div>
+          <div class="empresa-item"><div class="empresa-row1"><div class="empresa-nome">GSI 05 - Part. e Empreend. Imob. SPE</div><div class="empresa-capital">R$ 200.002</div></div><div class="empresa-row2"><div class="empresa-cnpj">41.645.452/0001-08</div><div class="empresa-participacao">0%</div><div class="empresa-data">20/04/2021</div><div class="badge ativo">● Ativa</div></div></div>
+          <div class="empresa-item"><div class="empresa-row1"><div class="empresa-nome">GSI 03 - Part. e Empreend. Imob. SPE</div><div class="empresa-capital">R$ 100.000</div></div><div class="empresa-row2"><div class="empresa-cnpj">38.237.844/0001-23</div><div class="empresa-participacao">0%</div><div class="empresa-data">26/08/2020</div><div class="badge ativo">● Ativa</div></div></div>
+          <div class="empresa-item"><div class="empresa-row1"><div class="empresa-nome">GSI 02 - Part. e Empreend. Imob. SPE</div><div class="empresa-capital">R$ 100.000</div></div><div class="empresa-row2"><div class="empresa-cnpj">34.653.984/0001-21</div><div class="empresa-participacao">0%</div><div class="empresa-data">26/08/2019</div><div class="badge ativo">● Ativa</div></div></div>
+          <div class="empresa-item"><div class="empresa-row1"><div class="empresa-nome">Lidderar Negócios Imobiliários LTDA</div><div class="empresa-capital">R$ 1.000</div></div><div class="empresa-row2"><div class="empresa-cnpj">29.413.257/0001-57</div><div class="empresa-participacao">0%</div><div class="empresa-data">11/01/2018</div><div class="badge ativo">● Ativa</div></div></div>
+          <div class="empresa-item baixada"><div class="empresa-row1"><div class="empresa-nome">Wilson da Silva Souza (MEI)</div><div class="empresa-capital">R$ 0</div></div><div class="empresa-row2"><div class="empresa-cnpj">35.590.405/0001-01</div><div class="empresa-participacao">100%</div><div class="empresa-data">01/08/1991</div><div class="badge baixada">● Baixada</div></div></div>
+          <div class="empresa-item baixada"><div class="empresa-row1"><div class="empresa-nome">GSAF Investimentos & Participações</div><div class="empresa-capital">R$ 1.000</div></div><div class="empresa-row2"><div class="empresa-cnpj">20.121.967/0001-39</div><div class="empresa-participacao">0%</div><div class="empresa-data">17/04/2014</div><div class="badge baixada">● Baixada</div></div></div>
+        </div>
+        <div class="patrimonio-total"><div class="label">Capital Societário Total Mapeado (empresas ativas)</div><div class="value">~R$ 5,1 Mi</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: LINKEDIN -->
+  <div id="tab-linkedin" class="tab-content">
+    <div class="main-grid">
+      <div>
+        <div class="card">
+          <div class="card-header">🔗 Perfil LinkedIn Identificado</div>
+          <div class="card-body">
+            <div class="linkedin-card">
+              <div class="linkedin-header">
+                <div class="linkedin-avatar">WS</div>
+                <div class="linkedin-info">
+                  <div class="ln-nome">Wilson S. Souza</div>
+                  <div class="ln-cargo">Diretor · SOMMA Investimentos</div>
+                  <div class="ln-local">📍 Santa Catarina, Brasil</div>
+                </div>
               </div>
+              <div class="linkedin-stats">
+                <div class="ln-stat"><div class="ln-stat-value">500+</div><div class="ln-stat-label">Conexões</div></div>
+                <div class="ln-stat"><div class="ln-stat-value">CIO</div><div class="ln-stat-label">Cargo atual</div></div>
+                <div class="ln-stat"><div class="ln-stat-value">20+</div><div class="ln-stat-label">Anos experiência</div></div>
+              </div>
+              <a class="linkedin-url" href="https://linkedin.com/in/wilson-s-souza-4136bb31" target="_blank">🔗 linkedin.com/in/wilson-s-souza-4136bb31</a>
             </div>
-            <span class="badge role">Somma</span>
+            <div class="info-row"><div class="info-icon blue">🏢</div><div class="info-col"><div class="info-label">Empresa atual</div><div class="info-value">SOMMA Investimentos</div></div></div>
+            <div class="info-row"><div class="info-icon blue">💼</div><div class="info-col"><div class="info-label">Cargo</div><div class="info-value">Chief Investment Officer (CIO) & Presidente</div></div></div>
+            <div class="info-row"><div class="info-icon blue">📍</div><div class="info-col"><div class="info-label">Localização</div><div class="info-value">Santa Catarina, Brasil</div></div></div>
+            <div class="info-row"><div class="info-icon blue">🌐</div><div class="info-col"><div class="info-label">Presença digital</div><div class="info-value">Citywire · MarketScreener · TheOrg</div></div></div>
           </div>
-
-          <div class="email-item">
-            <div class="email-left">
-              <div class="info-icon blue">✉️</div>
-              <div class="email-addr">alessandra.constantino@uol.com.br</div>
-            </div>
-            <span class="badge role">#1</span>
-          </div>
-
-          <div class="email-item">
-            <div class="email-left">
-              <div class="info-icon blue">✉️</div>
-              <div class="email-addr">veragrillo@uol.com.br</div>
-            </div>
-            <span class="badge role">#2</span>
-          </div>
-
-          <div class="email-item">
-            <div class="email-left">
-              <div class="info-icon blue">✉️</div>
-              <div class="email-addr">alessandra.constantino@yahoo.com.br</div>
-            </div>
-            <span class="badge role">#3</span>
-          </div>
-
-          <div class="email-item">
-            <div class="email-left">
-              <div class="info-icon blue">✉️</div>
-              <div class="email-addr">saravmarinho@gmail.com</div>
-            </div>
-            <span class="badge role">#4</span>
-          </div>
-
         </div>
       </div>
-
+      <div class="card">
+        <div class="card-header">📝 Publicações Recentes (LinkedIn)</div>
+        <div class="card-body">
+          <div class="publicacao-item">
+            <div class="pub-plataforma">🔗 LinkedIn · 2025</div>
+            <div class="pub-texto">Compartilhou análise sobre pagamentos em tempo real — Pix no Brasil, FedNow nos EUA. Destacou que até 2028 os pagamentos instantâneos podem gerar <strong>US$ 286 bilhões em PIB global</strong> e projeção de 167 milhões de novas contas no ecossistema financeiro mundial.</div>
+            <div class="pub-engajamento">📊 M&A RIA market · Open Finance · Pix Internacional</div>
+          </div>
+          <div class="publicacao-item">
+            <div class="pub-plataforma">🔗 LinkedIn · 2025</div>
+            <div class="pub-texto">Participou de cerimônia em Brasília tomando posse da coordenação do <strong>CECO (Conselho Consultivo)</strong> ao lado do Dr. Remaclo Fischer Junior.</div>
+            <div class="pub-engajamento">🏛️ Governança · Conselho · Brasília</div>
+          </div>
+          <div class="publicacao-item">
+            <div class="pub-plataforma">🔗 LinkedIn · 2024</div>
+            <div class="pub-texto">Análise aprofundada do mercado de M&A para RIAs nos EUA — destacou que <strong>100% dos top 20 compradores em 2024 têm backing de Private Equity</strong> e que o mercado brasileiro ainda está em fase inicial comparado ao americano.</div>
+            <div class="pub-engajamento">💼 M&A · Private Equity · RIA · Gestão de patrimônio</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- PARTICIPAÇÕES SOCIETÁRIAS -->
-  <div class="card" style="margin-bottom:24px;">
-    <div class="card-header">🏢 Participações Societárias — 10 empresas identificadas</div>
-    <div class="card-body">
-
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-
-        <div class="empresa-item destaque">
-          <div class="empresa-row1">
-            <div class="empresa-nome">Somma Multi-Family Office S.A.</div>
-            <div class="empresa-capital">R$ 205.000</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">29.247.309/0001-62</div>
-            <div class="empresa-participacao">Participação: —</div>
-            <div class="empresa-data">Fundação: 11/12/2017</div>
-            <span class="badge ativo">● Ativa</span>
-          </div>
+  <!-- TAB: RESUMO PÚBLICO -->
+  <div id="tab-publico" class="tab-content">
+    <div class="card" style="margin-bottom:20px;">
+      <div class="card-header">📰 Notícias e Menções Públicas — Últimos 12 meses</div>
+      <div class="card-body">
+        <div class="noticia-item">
+          <div class="noticia-fonte"><div class="noticia-fonte-nome">Noticenter</div><div class="noticia-data">2024–2025</div></div>
+          <div class="noticia-titulo">SOMMA Multi-Family Office inaugura primeiro escritório fora de Florianópolis</div>
+          <div class="noticia-resumo">A SOMMA MFO, referência consolidada no Sul do país com matriz em Florianópolis, anuncia expansão nacional. Com a nova unidade, a empresa projeta alcançar <strong>R$ 10 bilhões sob gestão</strong> nos próximos três anos. Wilson da Silva Souza lidera a estratégia de expansão como CEO do grupo.</div>
+          <div><span class="noticia-tag">Expansão</span> <span class="noticia-tag">Family Office</span> <span class="noticia-tag">R$ 10 bi meta</span></div>
         </div>
-
-        <div class="empresa-item destaque">
-          <div class="empresa-row1">
-            <div class="empresa-nome">Somma Partners LTDA</div>
-            <div class="empresa-capital">R$ 10.000</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">41.498.950/0001-75</div>
-            <div class="empresa-participacao">Participação: 0%</div>
-            <div class="empresa-data">Fundação: 08/04/2021</div>
-            <span class="badge ativo">● Ativa</span>
-          </div>
+        <div class="noticia-item">
+          <div class="noticia-fonte"><div class="noticia-fonte-nome">SOMMA Investimentos (site oficial)</div><div class="noticia-data">2024</div></div>
+          <div class="noticia-titulo">SOMMA anuncia vertical exclusiva para atletas e empresários do esporte</div>
+          <div class="noticia-resumo">A SOMMA Multi-Family Office anuncia nova vertical de negócios focada em gestão patrimonial para atletas de alta performance e empresários do setor esportivo — nicho com demanda crescente por estruturação financeira e sucessória.</div>
+          <div><span class="noticia-tag">Nova vertical</span> <span class="noticia-tag">Esporte</span> <span class="noticia-tag">Patrimônio</span></div>
         </div>
-
-        <div class="empresa-item">
-          <div class="empresa-row1">
-            <div class="empresa-nome">GSI 10 - Participações e Empreend. Imobiliário SPE</div>
-            <div class="empresa-capital">R$ 570.000</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">41.459.435/0001-86</div>
-            <div class="empresa-participacao">Participação: 33,3%</div>
-            <div class="empresa-data">Fundação: 05/04/2021</div>
-            <span class="badge ativo">● Ativa</span>
-          </div>
+        <div class="noticia-item">
+          <div class="noticia-fonte"><div class="noticia-fonte-nome">Ranking Nacional</div><div class="noticia-data">2024</div></div>
+          <div class="noticia-titulo">SOMMA Investimentos é destaque como gestora no ranking "10 Maiores Fundos de Pensão do Brasil"</div>
+          <div class="noticia-resumo">Estudo independente coloca a SOMMA Investimentos entre as gestoras de referência no Brasil, reconhecendo sua atuação em fundos de pensão, crédito privado e gestão imobiliária integrada.</div>
+          <div><span class="noticia-tag">Ranking</span> <span class="noticia-tag">Fundo de Pensão</span> <span class="noticia-tag">Reconhecimento</span></div>
         </div>
-
-        <div class="empresa-item">
-          <div class="empresa-row1">
-            <div class="empresa-nome">GSI 05 - Participações e Empreend. Imobiliário SPE</div>
-            <div class="empresa-capital">R$ 200.002</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">41.645.452/0001-08</div>
-            <div class="empresa-participacao">Participação: 0%</div>
-            <div class="empresa-data">Fundação: 20/04/2021</div>
-            <span class="badge ativo">● Ativa</span>
-          </div>
+        <div class="noticia-item">
+          <div class="noticia-fonte"><div class="noticia-fonte-nome">MarketScreener · Citywire</div><div class="noticia-data">2024–2025</div></div>
+          <div class="noticia-titulo">Wilson da Silva Souza — Chief Investment Officer, Somma Investimentos SA</div>
+          <div class="noticia-resumo">Plataformas internacionais de análise de gestores reconhecem Wilson da Silva Souza como CIO da Somma Investimentos. Sua ficha técnica está disponível no Citywire Brasil com histórico de performance dos fundos sob sua gestão.</div>
+          <div><span class="noticia-tag">CIO</span> <span class="noticia-tag">Citywire</span> <span class="noticia-tag">Gestão de fundos</span></div>
         </div>
-
-        <div class="empresa-item">
-          <div class="empresa-row1">
-            <div class="empresa-nome">GSI 03 - Participações e Empreend. Imobiliário SPE</div>
-            <div class="empresa-capital">R$ 100.000</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">38.237.844/0001-23</div>
-            <div class="empresa-participacao">Participação: 0%</div>
-            <div class="empresa-data">Fundação: 26/08/2020</div>
-            <span class="badge ativo">● Ativa</span>
-          </div>
-        </div>
-
-        <div class="empresa-item">
-          <div class="empresa-row1">
-            <div class="empresa-nome">GSI 02 - Participações e Empreend. Imobiliário SPE</div>
-            <div class="empresa-capital">R$ 100.000</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">34.653.984/0001-21</div>
-            <div class="empresa-participacao">Participação: 0%</div>
-            <div class="empresa-data">Fundação: 26/08/2019</div>
-            <span class="badge ativo">● Ativa</span>
-          </div>
-        </div>
-
-        <div class="empresa-item">
-          <div class="empresa-row1">
-            <div class="empresa-nome">Lidderar Negócios Imobiliários LTDA</div>
-            <div class="empresa-capital">R$ 1.000</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">29.413.257/0001-57</div>
-            <div class="empresa-participacao">Participação: 0%</div>
-            <div class="empresa-data">Fundação: 11/01/2018</div>
-            <span class="badge ativo">● Ativa</span>
-          </div>
-        </div>
-
-        <div class="empresa-item">
-          <div class="empresa-row1">
-            <div class="empresa-nome">WG2Y Participações LTDA</div>
-            <div class="empresa-capital">R$ 65.109</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">17.064.531/0001-40</div>
-            <div class="empresa-participacao">Participação: 0%</div>
-            <div class="empresa-data">Fundação: 18/10/2012</div>
-            <span class="badge ativo">● Ativa</span>
-          </div>
-        </div>
-
-        <div class="empresa-item baixada">
-          <div class="empresa-row1">
-            <div class="empresa-nome">Wilson da Silva Souza (MEI)</div>
-            <div class="empresa-capital">R$ 0</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">35.590.405/0001-01</div>
-            <div class="empresa-participacao">Participação: 100%</div>
-            <div class="empresa-data">Fundação: 01/08/1991</div>
-            <span class="badge baixada">● Baixada</span>
-          </div>
-        </div>
-
-        <div class="empresa-item baixada">
-          <div class="empresa-row1">
-            <div class="empresa-nome">GSAF Investimentos & Participações LTDA</div>
-            <div class="empresa-capital">R$ 1.000</div>
-          </div>
-          <div class="empresa-row2">
-            <div class="empresa-cnpj">20.121.967/0001-39</div>
-            <div class="empresa-participacao">Participação: 0%</div>
-            <div class="empresa-data">Fundação: 17/04/2014</div>
-            <span class="badge baixada">● Baixada</span>
-          </div>
-        </div>
-
       </div>
+    </div>
 
-      <div class="patrimonio-total">
-        <div class="label">Capital Societário Total Mapeado (empresas ativas)</div>
-        <div class="value">R$ 1.051.002</div>
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-header">🔎 Presença Digital Identificada</div>
+      <div class="card-body">
+        <div class="info-row"><div class="info-icon blue">🔗</div><div class="info-col"><div class="info-label">LinkedIn</div><div class="info-value blue">linkedin.com/in/wilson-s-souza-4136bb31 · 500+ conexões</div></div></div>
+        <div class="info-row"><div class="info-icon blue">📊</div><div class="info-col"><div class="info-label">Citywire Brasil</div><div class="info-value blue">citywire.com.br · Ficha técnica de gestor disponível</div></div></div>
+        <div class="info-row"><div class="info-icon blue">📈</div><div class="info-col"><div class="info-label">MarketScreener</div><div class="info-value blue">marketscreener.com · Perfil executivo cadastrado</div></div></div>
+        <div class="info-row"><div class="info-icon blue">🏢</div><div class="info-col"><div class="info-label">The Org</div><div class="info-value blue">theorg.com · CEO da SOMMA</div></div></div>
+        <div class="info-row"><div class="info-icon blue">🌐</div><div class="info-col"><div class="info-label">Site corporativo</div><div class="info-value blue">sommainvestimentos.com.br</div></div></div>
       </div>
-
     </div>
   </div>
 
-  <!-- ANÁLISE E RECOMENDAÇÃO -->
+  <!-- ANÁLISE -->
   <div class="analise-card">
     <div>
-      <div class="analise-label">Análise Somma — Recomendação de Abordagem</div>
-      <div class="analise-texto">
-        Wilson (55 anos) é sócio da <strong>Somma Multi-Family Office S.A.</strong> e da <strong>Somma Partners LTDA</strong> — vinculação direta ao grupo Somma identificada. Possui ainda participação em <strong>5 SPEs imobiliárias GSI</strong> com destaque para 33,3% na GSI 10. Perfil de investidor imobiliário experiente com histórico desde 1991. E-mail <em>luiza@sommainvestimentos.com.br</em> confirma relação ativa com o ecossistema. Abordagem ideal: planejamento patrimonial e estruturação sucessória do portfólio imobiliário.
-      </div>
+      <div class="analise-label">Análise Patrimonial — Resumo Executivo</div>
+      <div class="analise-texto">Wilson (55 anos) é <strong>fundador, CEO e CIO da Somma Investimentos</strong> desde 2003 — um dos principais gestores de patrimônio do Sul do Brasil. Com meta declarada de R$ 10 bi sob gestão, histórico em fundos de pensão e crédito privado, e presença em 12 empresas incluindo 5 SPEs imobiliárias. E-mail corporativo e 3 linhas WhatsApp ativas confirmados. Conexão direta com o grupo Somma identificada.</div>
     </div>
     <div class="analise-acoes">
-      <button class="btn" style="background:white; color:#1B3A6B; font-weight:700;">📩 Iniciar Abordagem</button>
-      <button class="btn" style="background:rgba(255,255,255,0.15); color:white; border:1px solid rgba(255,255,255,0.3);">➕ Adicionar ao Pipeline</button>
+      <button class="btn btn-danger">⚠️ Sócio Interno — Não Abordar</button>
+      <button class="btn btn-secondary" onclick="window.print()">📄 Exportar PDF</button>
     </div>
   </div>
 
 </div>
 
-<button class="pipeline-btn">📋 Pipeline (0)</button>
+<button class="pipeline-btn" onclick="alert('Lead adicionado ao Pipeline!')">📋 Pipeline (0)</button>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    alert('Copiado: ' + text);
+  }).catch(() => {
+    prompt('Copie o texto:', text);
+  });
+}
+</script>
 
 </body>
 </html>
